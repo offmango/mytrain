@@ -4,6 +4,8 @@ gem 'rails', '4.0.0'
 
 gem 'pg'
 
+gem 'slim'
+
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
@@ -26,28 +28,25 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 group :doc do
-  # bundle exec rake doc:rails generates the API under doc/api.
-  gem 'sdoc', require: false
+  	# bundle exec rake doc:rails generates the API under doc/api.
+  	gem 'sdoc', require: false
 end
 
 group :development, :test do
-  gem 'rspec-rails', '~> 2.0'
+  	gem 'rspec-rails', '~> 2.0'
+  	gem 'spork-rails', :github => 'sporkrb/spork-rails'
 end
 
 group :test do
-  gem 'cucumber-rails', :require => false
-  # database_cleaner is not required, but highly recommended
-  gem 'database_cleaner'
+  	gem 'cucumber-rails', :require => false
+  	# database_cleaner is not required, but highly recommended
+  	gem 'database_cleaner'
+	gem 'capybara'
+	gem 'shoulda-matchers'
+	gem 'bourne' #for spying
 end
 
-# Use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+group :development do
+	gem 'guard-spork'
+end
 
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Use Capistrano for deployment
-# gem 'capistrano', group: :development
-
-# Use debugger
-# gem 'debugger', group: [:development, :test]
