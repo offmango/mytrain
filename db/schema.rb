@@ -17,15 +17,13 @@ ActiveRecord::Schema.define(version: 20130829004221) do
   enable_extension "plpgsql"
 
   create_table "stop_times", force: true do |t|
-    t.integer  "route_id"
-    t.integer  "service_id"
     t.integer  "trip_id"
-    t.string   "trip_headsign"
-    t.integer  "trip_short_name"
-    t.integer  "direction_id"
-    t.integer  "block_id"
-    t.integer  "shape_id"
-    t.integer  "wheelchair_boarding"
+    t.integer  "arrival_time"
+    t.integer  "departure_time"
+    t.integer  "stop_id"
+    t.integer  "stop_sequence"
+    t.integer  "pickup_type"
+    t.integer  "drop_off_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
@@ -46,12 +44,15 @@ ActiveRecord::Schema.define(version: 20130829004221) do
   end
 
   create_table "trips", force: true do |t|
-    t.integer  "arrival_time"
-    t.integer  "departure_time"
-    t.integer  "stop_id"
-    t.integer  "stop_sequence"
-    t.integer  "pickup_type"
-    t.integer  "drop_off_type"
+    t.integer  "route_id"
+    t.integer  "service_id"
+    t.integer  "trip_id"
+    t.string   "trip_headsign"
+    t.integer  "trip_short_name"
+    t.integer  "direction_id"
+    t.integer  "block_id"
+    t.integer  "shape_id"
+    t.integer  "wheelchair_boarding"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

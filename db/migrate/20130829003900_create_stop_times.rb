@@ -1,6 +1,7 @@
-class CreateTrips < ActiveRecord::Migration
+class CreateStopTimes < ActiveRecord::Migration
   def change
-    create_table :trips do |t|
+    create_table :stop_times do |t|
+      t.integer :trip_id
       t.integer :arrival_time
       t.integer :departure_time
       t.integer :stop_id
