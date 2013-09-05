@@ -1,0 +1,3 @@
+class CalendarDate < ActiveRecord::Base
+	belongs_to :service
+end

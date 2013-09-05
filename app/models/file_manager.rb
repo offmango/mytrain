@@ -31,10 +31,7 @@ class FileManager
 	end
 
 	def self.convert_time_to_msm(time_string)
-		#what if time is after midnight?
 		time_string[0, 2].to_i * 60 + time_string[3, 2].to_i
- 		# begin seconds_since_midnight = time_string.sub(/\A24/, '00').to_time.seconds_since_midnight rescue nil end
-		# (seconds_since_midnight / 60).to_i if seconds_since_midnight.present?
 	end
 
 end

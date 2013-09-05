@@ -11,10 +11,51 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20130829004221) do
+ActiveRecord::Schema.define(version: 20130905011247) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "calendar_dates", force: true do |t|
+    t.integer  "service_id"
+    t.datetime "date"
+    t.integer  "exception_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "calendars", force: true do |t|
+    t.integer  "service_id"
+    t.binary   "monday"
+    t.binary   "tuesday"
+    t.binary   "wednesday"
+    t.binary   "thursday"
+    t.binary   "friday"
+    t.binary   "saturday"
+    t.binary   "sunday"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "routes", force: true do |t|
+    t.integer  "agency_id"
+    t.string   "route_short_name"
+    t.string   "route_long_name"
+    t.string   "route_desc"
+    t.integer  "route_type"
+    t.string   "route_url"
+    t.string   "route_color"
+    t.string   "route_text_color"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "services", force: true do |t|
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "stop_times", force: true do |t|
     t.integer  "trip_id"
